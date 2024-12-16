@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Cut Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+    width: 600px; /* Adjust based on your images */
+    height: 400px; /* Adjust based on your images */
+    overflow: hidden;
+}
+
+.paper-cut {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    transition: transform 1s ease;
+}
+
+.left {
+    left: 0;
+    transform-origin: left;
+}
+
+.right {
+    right: 0;
+    transform-origin: right;
+}
+
+.container:hover .left {
+    transform: translateX(-100%);
+}
+
+.container:hover .right {
+    transform: translateX(100%);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="paper-cut left">
+            <img src="image1.jpg" alt="Left Image">
+        </div>
+        <div class="paper-cut right">
+            <img src="image2.jpg" alt="Right Image">
+        </div>
+    </div>
+</body>
+</html>
